@@ -15,20 +15,23 @@ interface DetailedProps {
 }
 
 const Main = styled(Box)(
-    ({theme}) => `
+    ({theme}) => {
+        console.log(theme);
+        
+        return (`
         position: relative;
         right: 0;
         display: flex;
         flex-direction: column;
         display: none;
         padding-bottom: 8px;
-        background-color: ${theme.palette.base.light};
+        background-color: ${theme.palette.info.light};
         width: 24rem;
 
         @media screen and (max-width: 1280px) {
             display: block;
         }
-    ` 
+    `) }
 );
 
 const Detailed:FC<DetailedProps> = ({toggleDrawer}) => {
