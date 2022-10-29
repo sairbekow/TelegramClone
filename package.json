@@ -19,6 +19,7 @@
     "telegram": "^2.13.6"
   },
   "devDependencies": {
+    "@types/node": "^18.11.7",
     "@types/react": "^18.0.22",
     "@types/react-dom": "^18.0.7",
     "@vitejs/plugin-react": "^2.2.0",

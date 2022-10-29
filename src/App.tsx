@@ -1,26 +1,31 @@
 import { useState } from 'react'
-import reactLogo from './assets/icons/react.svg'
-import CreatorButton from './components/creatorButton'
-import RightColumn from './components/rightColumn'
+import reactLogo from '@/assets/icons/react.svg'
 
 function App() {
-  const [isDrawerOpened, setIsDrawerOpened] = useState(false)
-  const toggleDrawer = (open: boolean) =>
-          (event: KeyboardEvent | MouseEvent) => {
-              if (
-                  event.type === 'keydown' &&
-                  ((event as KeyboardEvent).key === 'Tab' ||
-                      (event as KeyboardEvent).key === 'Shift')
-              ) {
-                  return
-              }
-              setIsDrawerOpened(open)
-          }
+  const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <CreatorButton/>
-      <RightColumn isOpen={isDrawerOpened} toggleDrawer={toggleDrawer}/>
+      <div>
+        <a href="https://vitejs.dev" target="_blank">
+          <img src="/vite.svg" className="logo" alt="Vite logo" />
+        </a>
+        <a href="https://reactjs.org" target="_blank">
+          <img src={reactLogo} className="logo react" alt="React logo" />
+        </a>
+      </div>
+      <h1>Vite + React</h1>
+      <div className="card">
+        <button onClick={() => setCount((count) => count + 1)}>
+          count is {count}
+        </button>
+        <p>
+          Edit <code>src/App.tsx</code> and save to test HMR
+        </p>
+      </div>
+      <p className="read-the-docs">
+        Click on the Vite and React logos to learn more
+      </p>
     </div>
   )
 }
