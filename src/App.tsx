@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import reactLogo from '@/assets/icons/react.svg'
+import CreatorButton from './components/creatorButton'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -26,6 +27,7 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <CreatorButton/>
     </div>
   )
 }
