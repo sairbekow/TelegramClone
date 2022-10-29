@@ -2,6 +2,7 @@ import { useState } from 'react'
 import reactLogo from '@/assets/icons/react.svg'
 import CreatorButton from './components/creatorButton'
 import RightColumn from './components/rightColumn'
+import Button from "@mui/material/Button"
 
 function App() {
   const [isDrawerOpened, setIsDrawerOpened] = useState(false)
@@ -23,6 +24,9 @@ function App() {
     <div className="App">
       <CreatorButton/>
       <RightColumn isOpen={isDrawerOpened} toggleDrawer={toggleDrawer}/>
+      <Button onClick={toggleDrawer(true)}>
+        Open
+      </Button>
     </div>
   )
 }
