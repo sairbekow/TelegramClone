@@ -4,7 +4,7 @@ import AuthByQR from "./authByQR";
 import AuthByPhone from "./authByPhone";
 import { useState } from "react";
 
-const Button = styled.button`
+const MyButton = styled.button`
     border: none;
     font-size: 16px;
     padding: 17px;
@@ -13,6 +13,8 @@ const Button = styled.button`
     color: ${theme.palette.primary.light};
     background-color: transparent;
     cursor: pointer;
+    margin-top: 16px;
+    font-weight: 500;
 
     &:hover {
         background-color: rgba(74, 149, 214, 0.08);
@@ -20,23 +22,30 @@ const Button = styled.button`
     }
 `;
 
+const Main = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+`
+
 function Auth() {
     const [isLogInByPhone, setIsLogInByPhone] = useState(false);
     return (
-        <div className="flex flex-col justify-center items-center h-screen">
+        <Main>
             {isLogInByPhone ? <AuthByPhone /> : <AuthByQR />}
 
-            <Button
+            <MyButton
                 onClick={() => setIsLogInByPhone((prev) => !prev)}
-                className="mt-4 font-medium"
             >
                 {isLogInByPhone ? (
                     <p>Вход по QR-коду </p>
                 ) : (
                     <p>Вход по номеру телефона</p>
                 )}
-            </Button>
-        </div>
+            </MyButton>
+        </Main>
     );
 }
 

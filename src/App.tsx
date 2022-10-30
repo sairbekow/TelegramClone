@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import AppRouter from './components/router/router'
+import MainLayout from './components/MainLayout'
+import AppRouter from './components/router/router' 
+import "./styles/globals.css"
 
 function App() {
   return (
-    <div className="App">
+    <MainLayout>
       <AppRouter />
-    </div>
+    </MainLayout>
   )
 }
 

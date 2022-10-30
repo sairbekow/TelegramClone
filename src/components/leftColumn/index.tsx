@@ -3,9 +3,8 @@ import CreatorButton from "@/components/creatorButton";
 import ChatItem from "@/components/chatItem";
 import ChatFolders from "@/components/chatFolders";
 import { Box } from "@mui/material";
-import { useState, useEffect, useRef } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { isContacts, noContacts } from "@/redux/slices/contacts";
+import { useEffect, useRef } from "react";
+// import { useSelector, useDispatch } from "react-redux";
 
 const LeftColumn = () => {
     const ref = useRef<any>(null);
@@ -50,8 +49,8 @@ const LeftColumn = () => {
         };
     }, []);
 
-    const cont = useSelector((state) => state);
-    console.log("Contact", cont);
+    // const cont = useSelector((state) => state);
+    // console.log("Contact", cont);
 
     return (
         <div
