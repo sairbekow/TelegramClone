@@ -22,7 +22,7 @@ const routes: RouteObj[] = [
 ]
 
 const AppRouter = () => {
-    const auth = false;
+    const auth = true;
   return (
     <Routes>
         {

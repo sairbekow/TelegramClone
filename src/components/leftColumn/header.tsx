@@ -4,10 +4,11 @@ import SearchIcon from "@mui/icons-material/Search";
 import MenuIcon from "@mui/icons-material/Menu";
 import PushPinOutlinedIcon from "@mui/icons-material/PushPinOutlined";
 import InputBase from "@mui/material/InputBase";
-import styled from "@emotion/styled";
+// import styled from "@emotion/styled";
+import { styled } from "@mui/material/styles";
 import { Button, Popover, Typography } from "@mui/material";
 import ArrowBack from "@mui/icons-material/ArrowBack";
-import { css } from "@emotion/css";
+// import { css } from "@emotion/css";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import NotificationsOffOutlinedIcon from "@mui/icons-material/NotificationsOffOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
@@ -22,8 +23,8 @@ import ModeNightOutlinedIcon from "@mui/icons-material/ModeNightOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BugReportOutlinedIcon from "@mui/icons-material/BugReportOutlined";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
-import { useDispatch } from "react-redux";
-import { isContacts, noContacts } from "@/redux/slices/contacts";
+// import { useDispatch } from "react-redux";
+// import { isContacts, noContacts } from "@/redux/slices/contacts";
 const Header = () => {
     const [burger, setBurger] = useState(true);
     const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null);
@@ -74,14 +75,14 @@ const Header = () => {
         },
     ];
 
-    const dispatch = useDispatch();
+    // const dispatch = useDispatch();
 
-    function setContactMode(e) {
-        if (e.target.innerText.toLowerCase() === "contacts") {
-            console.log(e);
-            dispatch(isContacts());
-        } else dispatch(noContacts());
-    }
+    // function setContactMode(e) {
+    //     if (e.target.innerText.toLowerCase() === "contacts") {
+    //         console.log(e);
+    //         dispatch(isContacts());
+    //     } else dispatch(noContacts());
+    // }
 
     return (
         <div className="flex justify-between px-3 pt-1 text-white w-full">
@@ -119,9 +120,9 @@ const Header = () => {
                                 justifyContent: "start",
                                 gap: "10px",
                             }}
-                            onClick={(e) => {
-                                setContactMode(e);
-                            }}
+                            // onClick={(e) => {
+                            //     setContactMode(e);
+                            // }}
                         >
                             {item.icon}
                             <span style={{ color: "black" }}>{item.title}</span>

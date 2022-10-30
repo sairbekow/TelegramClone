@@ -23,7 +23,7 @@ const Main = styled(Box)(
         right: 0;
         display: flex;
         flex-direction: column;
-        display: none;
+        // display: none;
         padding-bottom: 8px;
         background-color: ${theme.palette.info.light};
         width: 24rem;
