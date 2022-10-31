@@ -15,7 +15,6 @@ const Main = styled(Box)`
 `
 
 const IconBlock = styled(Box)`
-    padding: 0 8px;
     border-radius: 50%;
 `
 

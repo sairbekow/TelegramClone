@@ -3,7 +3,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import EditIcon from '@mui/icons-material/Edit';
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { styled } from "@mui/material/styles";
-import { Box, Button } from '@mui/material';
+import { Box, Button, IconButton } from '@mui/material';
 
 interface Props {
     toggleDrawer: (bool: boolean) => MouseEventHandler<HTMLButtonElement> | undefined
@@ -24,16 +24,18 @@ const Main = styled(Box)(
     `
 );
 
-const ButtonIcon = styled(Button)(
+const ButtonIcon = styled(IconButton)(
     ({theme}) => `
-        padding: 8px;
+        box-sizing: border-box;
+        width: 45px;
+        height: 45px;
         border-radius: 50%;
         display: flex;
         align-items: center;
         outline: none;
 
         &:hover{
-            background: ${theme.palette.icons.main};
+            background: ${theme.palette.info.main};
         }
     `
 )

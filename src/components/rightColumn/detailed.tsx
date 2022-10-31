@@ -15,40 +15,56 @@ interface DetailedProps {
 }
 
 const Main = styled(Box)(
-    ({theme}) => {
-        console.log(theme);
-        
-        return (`
+    ({theme}) => `
         position: relative;
         right: 0;
         display: flex;
         flex-direction: column;
         // display: none;
         padding-bottom: 8px;
-        background-color: ${theme.palette.info.light};
-        width: 24rem;
+        // background-color: ${theme.palette.info.light};
+        width: 26rem;
 
         @media screen and (max-width: 1280px) {
             display: block;
         }
-    `) }
+    `
 );
+
+// const MediaList = styled(List)`
+//     display: flex;  
+//     align-items: center;
+//     justify-content: space-around;
+//     padding: 0 12px;
+//     margin-bottom: 6px;
+//     list-style: none;
+
+// `
+
+const InfoList = styled(Box)`
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+`
 
 const Detailed:FC<DetailedProps> = ({toggleDrawer}) => {
     return (
         <Main>
             <RightColumnHeader toggleDrawer={toggleDrawer}/>
             <RightColumnGalerally images={[photo]}/>
-            <RightColumnInfoItem Icon={ErrorOutlineIcon} field={"Bio"} value={"25 y.o traveler"}/>
-            <RightColumnInfoItem Icon={AlternateEmailIcon} field={"Username"} value={"@karen"}/>
-            <RightColumnInfoItem Icon={LocalPhoneIcon} field={"Phone"} value={"+1 38594 38538"}/>
-            <RightColumnInfoItem Icon={CheckBoxIcon} field={"Notification"} value={"Enabled"}/>
-            <List className="flex flex-row items-center justify-around px-3 mb-1 list-none border-b select-none">
+            <InfoList>
+                <RightColumnInfoItem Icon={ErrorOutlineIcon} field={"Bio"} value={"25 y.o traveler"}/>
+                <RightColumnInfoItem Icon={AlternateEmailIcon} field={"Username"} value={"@karen"}/>
+                <RightColumnInfoItem Icon={LocalPhoneIcon} field={"Phone"} value={"+1 38594 38538"}/>
+                <RightColumnInfoItem Icon={CheckBoxIcon} field={"Notification"} value={"Enabled"}/>
+            </InfoList>
+            {/* <MediaList>
                 <RightColumnNavItem text={"Media"} />
                 <RightColumnNavItem text={"Docs"} />
                 <RightColumnNavItem text={"Links"} />
                 <RightColumnNavItem text={"Audio"} />
-            </List>
+            </MediaList> */}
         </Main>
     );
 };
