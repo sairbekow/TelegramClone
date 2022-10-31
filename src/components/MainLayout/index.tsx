@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import LeftColumn from "@/components/leftColumn";
 import { styled } from "@mui/material/styles";
 import Contacts from "../contacts";
+import ContactWrapper from "../contacts/contactWrapper";
 
 interface MainLayoutProps {
     children: ReactElement;
@@ -16,19 +17,20 @@ const Main = styled(Box)`
     overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-`
+`;
 
 const LeftBlock = styled(Box)`
     @media screen and (min-width: 768px) {
         flex-grow: 2;
     }
-`
+`;
 
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     return (
         <Main>
             <LeftBlock>
-                <LeftColumn />
+                {/* <LeftColumn /> */}
+                <ContactWrapper />
             </LeftBlock>
             <div style={{ flex: 3 }}>{children}</div>
         </Main>

@@ -8,11 +8,10 @@ const ContactWrapper = styled.div`
     display: flex;
     align-items: center;
     gap: 10px;
-    padding: 5px 10px;
+    padding: 10px;
     width: 100%;
     cursor: pointer;
-    border-radius: 15px;
-
+    border-radius: 10px;
     font-family: ${theme.typography.fontFamily};
 
     &:hover {
@@ -32,7 +31,8 @@ const UserName = styled.p`
 `;
 
 const UserStatus = styled.p`
-    font-weight: 600;
+    font-weight: 400;
+    color: ${theme.palette.icons.main};
 `;
 export default function Contact({}: Props) {
     return (
@@ -43,7 +43,7 @@ export default function Contact({}: Props) {
             />
             <div>
                 <UserName>Арген Саирбеков</UserName>
-                <p className="text-sm">онлайн</p>
+                <UserStatus>онлайн</UserStatus>
             </div>
         </ContactWrapper>
     );
