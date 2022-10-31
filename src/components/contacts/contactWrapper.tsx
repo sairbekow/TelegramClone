@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import Contact from "./contact";
 
 import styled from "styled-components";
 import theme from "@/styles/theme";
 import PersonAddIcon from "@mui/icons-material/PersonAdd";
+import AddNewContact from "./addNewContact";
+import { ModalWrapper } from "../createModals/wrapper";
 
 type Props = {};
 
@@ -26,27 +28,41 @@ const AddUser = styled.div`
 `;
 
 function ContactWrapper({}: Props) {
+    const [isOpenModal, setIsOpenModal] = useState(false);
+
+    function openWindow() {
+        setIsOpenModal(true);
+    }
     return (
-        <ContactBox>
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <Contact />
-            <AddUser>
-                <PersonAddIcon style={{ color: "white" }} fontSize="medium" />
-            </AddUser>
-        </ContactBox>
+        <>
+            <ContactBox>
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <Contact />
+                <AddUser>
+                    <PersonAddIcon
+                        style={{ color: "white" }}
+                        fontSize="medium"
+                        onClick={openWindow}
+                    />
+                </AddUser>
+            </ContactBox>
+            <ModalWrapper open={isOpenModal} setOpen={setIsOpenModal}>
+                <AddNewContact />
+            </ModalWrapper>
+        </>
     );
 }
 
