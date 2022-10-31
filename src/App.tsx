@@ -1,13 +1,12 @@
-import LeftColumn from "./components/leftColumn/LeftColumn"
-import RightColumn from "./components/rightColumn"
+import MainLayout from './components/MainLayout'
+import AppRouter from './components/router/router'
+import "./styles/globals.css"
 
 function App() {
-
   return (
-    <div className="App">
-      <LeftColumn />
-      {/* <RightColumn /> */}
-    </div>
+    <MainLayout>
+      <AppRouter />
+    </MainLayout>
   )
 }
 

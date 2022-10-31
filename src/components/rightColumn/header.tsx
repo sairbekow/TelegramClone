@@ -38,6 +38,13 @@ const ButtonIcon = styled(Button)(
     `
 )
 
+const DisplayTitle = styled(Box)`
+    margin-left: 16px;
+    margin-right: auto;
+    font-size: 18px;
+    font-weight: 500;
+`
+
 
 const RightColumnHeader = ({toggleDrawer}: Props) => {
   return (
@@ -45,7 +52,7 @@ const RightColumnHeader = ({toggleDrawer}: Props) => {
         <ButtonIcon onClick={toggleDrawer(false)}>
             <CloseIcon/>
         </ButtonIcon>
-        <span className="ml-4 mr-auto text-lg font-medium">Profile</span>
+        <DisplayTitle component={"span"}>Profile</DisplayTitle>
         <ButtonIcon>
             <EditIcon/>
         </ButtonIcon>

@@ -15,7 +15,7 @@ const RightColumn: FC<RightColumnProps> = ({isOpen, toggleDrawer}) => {
             <Drawer
                 anchor={anchor}
                 open={isOpen}
-                onClose={toggleDrawer(isOpen)}
+                onClose={toggleDrawer(false)}
             >
                 {
                     // content
