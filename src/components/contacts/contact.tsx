@@ -40,9 +40,8 @@ export default function Contact({}: Props) {
             <ContactImage
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwr_zZjgvmu4BccwDNIHic8K5dyehw7cSYA&usqp=CAU"
                 alt=""
-                className="w-14 h-14 object-cover rounded-full"
             />
-            <div className="">
+            <div>
                 <UserName>Арген Саирбеков</UserName>
                 <p className="text-sm">онлайн</p>
             </div>
