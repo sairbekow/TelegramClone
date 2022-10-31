@@ -1,18 +1,21 @@
-import ChatroomHeader from "@/components/chatroom/сhatroomHeader";
-import { Box } from "@mui/material";
-import ChatroomBody from "@/components/chatroom/chatroomBody";
-import ChatroomBackground from "@/components/chatroom/chatroomBackground";
+import ChatroomHeader from '@/components/chatroom/header/header'
+import ChatroomBody from '@/components/chatroom/body'
+import ChatroomBackground from '@/components/chatroom/background'
+import styled from 'styled-components'
+
+const ChatroomWrapper = styled.div`
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+`
 
 const Chatroom = () => {
     return (
-        <Box height={'100vh'}
-            marginLeft={'auto'}
-            position={'relative'}
-        >
+        <ChatroomWrapper>
             <ChatroomHeader />
             <ChatroomBody />
             <ChatroomBackground />
-        </Box>
+        </ChatroomWrapper>
     )
 }
 
