@@ -25,7 +25,7 @@ const ModalContainer = styled(Box)(
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 400px;
+        min-width: 400px;
         background: ${theme.palette.background.paper};
         box-shadow: 0 0 8px ${theme.palette.base.dark};
         padding: 26px;
