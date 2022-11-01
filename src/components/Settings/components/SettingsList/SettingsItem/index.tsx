@@ -2,6 +2,8 @@ import { Box, Stack, Typography } from "@mui/material"
 import { ISettings } from "@/components/Settings/data";
 import styled from "styled-components";
 import theme from "@/styles/theme";
+import { useAppDispatch } from "../../../../../hooks/redux";
+import { changeSlide } from "@/redux/slices/sideBarRoute";
 interface IInfoBlock {
   data: ISettings
 }
@@ -26,8 +28,12 @@ const Paragraph = styled.p`
 `
 
 export const SettingsItem = ({ data }: IInfoBlock) => {
+  const dispatch = useAppDispatch();
+  const changeLeftSlide = () => {
+    dispatch(changeSlide(data.path));
+  }
   return (
-    <Wrapper>
+    <Wrapper onClick={changeLeftSlide}>
       {data.icon}
       <Box flexDirection={"column"}>
         <Paragraph>{data.title}</Paragraph>

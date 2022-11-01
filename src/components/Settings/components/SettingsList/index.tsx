@@ -21,13 +21,9 @@ export const SettingsList = ({ activeSetting, setActiveSetting }: ISettingsList)
   return (
     <Wrapper>
       {
-        settingsList.map((elem: ISettings, index: number) => {
-          if (elem.isList) return (
-            <div key={index} onClick={() => setActiveSetting(index)}>
-              <SettingsItem data={elem} />
-            </div>
-          )
-        })
+        settingsList.map((elem: ISettings, index: number) => (
+          <SettingsItem data={elem} key={index}/>
+        ))
       }
     </Wrapper>
   )

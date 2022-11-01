@@ -1,11 +1,10 @@
 import { ISideBarRoute, SidebarRoute, sideBarRoutes } from "@/utils/sideBarRoute";
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
-import LeftColumn from "@/components/leftColumn";
-import { Settings } from "@/components/Settings";
+import LeftRootBlock from "@/components/leftRootBlock/LeftRootBlock";
 
 const initialState:ISideBarRoute[] = [{
   path:SidebarRoute.Root,
-  component: Settings
+  component: LeftRootBlock
 }]
 
 

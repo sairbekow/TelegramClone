@@ -22,7 +22,6 @@ const userInfor = [
 
 const Wrapper = styled.div`
   background: ${theme.palette.base.light};
-  margin-top: 56px;
 `
 const UserDataWrapper = styled.div`
   width: 100%;

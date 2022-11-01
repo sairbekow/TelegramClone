@@ -5,13 +5,13 @@ import { EditProfile } from "../EditProfile";
 import { ChangeTheme } from "./components/ChangeTheme";
 import styled from "styled-components";
 import theme from "@/styles/theme";
+import { ContentHead } from "../ContentHead/index";
 
 const generalSettingsData = [
   {
     title: "Chat Background",
     icon: <ImageOutlinedIcon color={"icons"} />,
-    component: <EditProfile/>,
-    isList: true,
+    path: "root",
   }
 ]
 
@@ -20,28 +20,30 @@ const SettingsTitle = styled.h4`
   font-size: 1rem;
   margin-bottom: 1rem;
   font-weight: 500;
-  color: ${theme.palette.icons.main}
+  color: ${props=> props.theme.palette.icons.main}
 `
 
 const Wrapper = styled.div`
-  margin-top: 56px;
-`
-const WrapperInner = styled.div`
+  width: 100%;
   padding: 1.5rem 0.5rem;
-  background: ${theme.palette.base.light}
+  background: ${props=> props.theme.palette.base.light};
+  height: calc(100vh - 56px);
+  overflow-x: hidden;
+  overflow-y: overlay;
 `
 
 export const GeneralSettings = () => {
   return (
-    <Wrapper>
-      <WrapperInner>
+    <>
+      <ContentHead title={"General Settings"}/>
+      <Wrapper>
         <SettingsTitle>Settings</SettingsTitle>
         <div>
           <SettingsItem data={generalSettingsData[0]} />
         </div>
         <SettingsTitle>Theme</SettingsTitle>
         <ChangeTheme/>
-      </WrapperInner>
-    </Wrapper>
+      </Wrapper>
+    </>
   )
 }

@@ -8,13 +8,20 @@ const Wrapper = styled.div`
   width: 100%;
   background: #f4f4f5;
 `
+const WrapperInner = styled.div`
+  height: calc(100vh - 56px);
+  overflow-x: hidden;
+  overflow-y: overlay;
+`
 export const Settings: FC = () => {
   const [activeSetting, setActiveSetting] = useState(-1);
   return (
     <Wrapper>
       <SettingsHead setActiveSetting={setActiveSetting} />
-      <UserData />
-      <SettingsList setActiveSetting={setActiveSetting} activeSetting={activeSetting} />
+      <WrapperInner>
+        <UserData />
+        <SettingsList setActiveSetting={setActiveSetting} activeSetting={activeSetting} />
+      </WrapperInner>
     </Wrapper >
   );
 };

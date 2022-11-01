@@ -12,45 +12,38 @@ import { CreateFolder } from "./content/CreateFolder";
 export interface ISettings {
   title: string,
   icon?: ReactNode,
-  component: ReactNode,
-  isList: boolean,
+  path: string,
 }
 
 export const settingsList: ISettings[] = [
   {
     title: "General Settings",
     icon: <SettingsOutlinedIcon color={"icons"} />,
-    component: <GeneralSettings />,
-    isList: true,
+    path: "generalSetting"
   },
   {
     title: "Notifications",
     icon: <NotificationsActiveOutlinedIcon color={"icons"} />,
-    isList: true,
-    component: <GeneralSettings />
+    path: "notification"
   },
   {
     title: "Privacy and Security",
     icon: <LockOutlinedIcon color={"icons"} />,
-    isList: true,
-    component: <GeneralSettings />
+    path: "generalSetting"
   },
   {
     title: "Chat Folders",
     icon: <FolderOutlinedIcon color={"icons"} />,
-    isList: true,
-    component: <CreateFolder />
+    path: "createFolder"
   },
   {
     title: "Devices",
     icon: <DevicesOutlinedIcon color={"icons"} />,
-    isList: true,
-    component: <GeneralSettings />
+    path: "root"
   },
   {
     title: "Stickers and Emoji",
     icon: <SentimentSatisfiedAltOutlinedIcon color={"icons"} />,
-    isList: true,
-    component: <GeneralSettings />
+    path: "root"
   },
 ];
