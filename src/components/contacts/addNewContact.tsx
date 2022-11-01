@@ -7,17 +7,28 @@ type Props = {}
 
 const Box = styled.div`
   width: 500px;
+
+  @media screen and (max-width: 575px) {
+    width: calc(100vw - 100px);
+    /* padding: 0 20px; */
+  }
 `
 
 const Title = styled.h3`
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+  font-weight: 500;
 `
 
 const ContactBox = styled.div`
   display: grid;
   grid-template-columns: 25% 73%;
   gap: 10px;
-  /* padding: 20px; */
+
+  @media screen and (max-width: 575px) {
+    display: flex;
+    flex-direction: column;
+  }
 `
 const LeftBlock = styled.div`
   display: flex;
@@ -50,7 +61,7 @@ function AddNewContact({}: Props) {
   const [phoneNumber, setPhoneNumber] = useState('')
 
   function getPhoneNumber(e) {
-    setName(e.target.value)
+    setPhoneNumber(e.target.value)
   }
 
   function getName(e) {
@@ -74,13 +85,13 @@ function AddNewContact({}: Props) {
         <RightBlock>
           <TextField
             prefix={'+'}
-            // format={format || null}
-            type="text"
-            defaultValue="+" // thousandSeparator={thousandSeparator ? " " : null}
+            type="number"
+            defaultValue="+"
             id="outlined-basic"
             label="Номер телефона"
             variant="outlined"
             autoFocus
+            onChange={(e) => getPhoneNumber(e)}
           />
           <TextField
             id="outlined-basic"
@@ -97,7 +108,12 @@ function AddNewContact({}: Props) {
           />
           <DialogActions>
             <Button>Отмена</Button>
-            <Button autoFocus>Готово</Button>
+            <Button
+              autoFocus
+              disabled={phoneNumber.length && name.length ? false : true}
+            >
+              Готово
+            </Button>
           </DialogActions>
         </RightBlock>
       </ContactBox>
