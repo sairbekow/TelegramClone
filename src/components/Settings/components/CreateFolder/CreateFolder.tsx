@@ -1,4 +1,4 @@
-import React, { useState, MouseEvent } from 'react'
+import { useState, MouseEvent } from 'react'
 import { AllChat, AllChatDescr, AllChatText, BlockDelete, BlockFolder, BlockYourChats, Button, ButtonCreate, ChatFolder, FolderText, RightBlock, TitleFolder, Wrapper, YourChat } from './CreateFolderStyle'
 import AddIcon from '@mui/icons-material/Add';
 import MenuIcon from '@mui/icons-material/Menu';
