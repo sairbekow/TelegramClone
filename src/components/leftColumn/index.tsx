@@ -244,21 +244,20 @@ const LeftColumn = () => {
                                                 width: "100%",
 
                                             }}>
-                                            <ul
+                                            <div
                                                 style={{
                                                     display: 'flex',
                                                     flexDirection: 'column',
                                                     width: '100%',
                                                     height: '100%',
                                                     padding: "0 8px",
-                                                    userSelect: 'none',
                                                 }}>
                                                 {
-                                                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11  ].map(item => (
-                                                        <ChatItem key={item} />
+                                                    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map((item,index) => (
+                                                        <ChatItem key={item} index={index} />
                                                     ))
                                                 }
-                                            </ul>
+                                            </div>
                                         </Box>
                                     </TabPanel>
                                 </>
