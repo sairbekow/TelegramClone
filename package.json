@@ -16,10 +16,12 @@
     "@mui/styled-engine-sc": "^5.10.6",
     "@reduxjs/toolkit": "^1.8.6",
     "@types/react-router-dom": "^5.3.3",
+    "@types/react-swipeable-views": "^0.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2",
+    "react-swipeable-views": "^0.14.0",
     "styled-components": "^5.3.6",
     "telegram": "^2.13.6"
   },
