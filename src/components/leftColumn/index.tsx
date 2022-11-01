@@ -2,7 +2,7 @@ import Header from "@/components/leftColumn/header";
 import CreatorButton from "@/components/creatorButton";
 import ChatItem from "@/components/chatItem/ChatItem";
 import { Box } from "@mui/material";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import { useSelector, useDispatch } from "react-redux";
 import { isContacts, noContacts } from "@/redux/slices/contacts";
 
@@ -268,7 +268,7 @@ const LeftColumn = () => {
                 </Box>
                 <CreatorButton />
             </LeftBlock>
-            <Line ref={refRight} className="resizer resizer-r"></Line>
+            <Line ref={refRight} className='resizer resizer-r'/>
         </Wrapper>
     );
 };

@@ -1,7 +1,7 @@
 import backgroundImage from '@/assets/images/bg-chatroom-light.png'
-import backgroundColoredImage from "@/assets/images/bg-chatroom-colored.png";
-import {styled} from "@mui/material/styles";
-import {Box} from '@mui/material';
+import backgroundColoredImage from '@/assets/images/bg-chatroom-colored.png'
+import { styled } from '@mui/material/styles'
+import { Box } from '@mui/material'
 
 const Main = styled(Box)`
   position: absolute;
@@ -25,7 +25,7 @@ const Main = styled(Box)`
   }
 
   &::after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -40,9 +40,7 @@ const Main = styled(Box)`
 `
 
 const ChatroomBackground = () => {
-    return (
-        <Main/>
-    );
-};
+  return <Main />
+}
 
-export default ChatroomBackground;
+export default ChatroomBackground
