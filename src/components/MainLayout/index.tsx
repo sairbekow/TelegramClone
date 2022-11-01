@@ -18,19 +18,12 @@ const Main = styled(Box)`
     -moz-osx-font-smoothing: grayscale;
 `
 
-const LeftBlock = styled(Box)`
-    @media screen and (min-width: 768px) {
-        flex-grow: 2;
-    }
-`
-
 const MainLayout: FC<MainLayoutProps> = ({ children }) => {
     return (
         <Main>
-            <LeftBlock>
-                <LeftColumn />
-            </LeftBlock>
-            <div style={{ flex: 3 }}>{children}</div>
+            <LeftColumn />
+            <div style={{ width: "100%" }}
+            >{children}</div>
         </Main>
     );
 };
