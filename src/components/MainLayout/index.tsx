@@ -1,8 +1,8 @@
-import { FC, ReactElement } from "react";
-// import { Box } from "@mui/material";
-import LeftColumn from "@/components/leftColumn";
-// import { styled } from "@mui/material/styles";
-import Contacts from "../contacts";
+import { FC, ReactElement } from 'react'
+// import { Box } from '@mui/material'
+import LeftColumn from '@/components/leftColumn'
+// import { styled } from '@mui/material/styles'
+import { Outlet } from 'react-router-dom'
 import { useAppSelector } from "../../hooks/redux";
 import { Box, Grow, Slide } from "@mui/material";
 import { css, keyframes } from "styled-components";
@@ -13,13 +13,13 @@ interface MainLayoutProps {
 }
 
 const Main = styled(Box)`
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    overflow: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 `
 
 const LeftBlock = styled(Box)`
@@ -81,4 +81,4 @@ const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   );
 };
 
-export default MainLayout;
+export default MainLayout

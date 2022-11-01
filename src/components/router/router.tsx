@@ -1,42 +1,28 @@
-import NotFound from '@/pages/404';
-import Auth from '@/pages/auth';
-import Chatroom from '@/pages/chatroom';
-import { routePath } from '@/utils/routePath';
-import { FC } from 'react'
+import NotFound from '@/pages/404'
+import Auth from '@/pages/auth'
+import Chatroom from '@/pages/chatroom'
 import { Route, Routes } from 'react-router-dom'
-
-
-interface RouteObj {
-  path: string
-  component: FC
-}
-
-const routes: RouteObj[] = [
-  {
-    path: routePath.CHATROOM,
-    component: Chatroom
-  },
-  {
-    path: routePath.NOT_FOUND,
-    component: NotFound
-  }
-]
+import MainLayout from '@/components/MainLayout'
+import EmptyChatroom from '@/components/chatroom/empty'
 
 
 
 
 const AppRouter = () => {
-  const auth = true;
-  return (
-    <Routes>
-        {
-            auth ? routes.map((obj) => (
-                <Route path={obj.path} element={<obj.component/>}/>
-            ))
-            : <Route path={"*"} element={<Auth/>}/>
-        }
-    </Routes>
-  )
+  const auth = true
+    return (
+        <Routes>
+            {auth ? (
+                <Route path='/' element={<MainLayout />}>
+                    <Route index element={<EmptyChatroom />} />
+                    <Route path=':id' element={<Chatroom />} />
+                </Route>
+                ) : (
+                <Route path="/auth" element={<Auth />} />
+                )}
+            <Route path='*' element={<NotFound />} />
+        </Routes>
+    )
 }
 
 export default AppRouter
