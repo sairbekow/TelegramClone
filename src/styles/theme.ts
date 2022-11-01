@@ -1,10 +1,5 @@
-import
-{
-    createTheme,
-    PaletteOptions,
-    ThemeOptions
-} from '@mui/material/styles';
-import type {PaletteColorOptions} from "@mui/material/styles/createPalette";
+import { createTheme, PaletteOptions, ThemeOptions } from '@mui/material/styles'
+import type { PaletteColorOptions } from '@mui/material/styles/createPalette'
 
 interface IPalette extends PaletteOptions {
     base: PaletteColorOptions
@@ -27,12 +22,12 @@ const themeOptions: ITheme = {
             light: '#00C73E',
             main: '#00C73E',
             dark: '#8774E1',
-            contrastText: '#000'
+            contrastText: '#000',
         },
         base: {
             dark: '#212121',
             light: '#fff',
-            main: '#fff'
+            main: '#fff',
         },
         icons: {
             main: '#707579',
@@ -42,10 +37,10 @@ const themeOptions: ITheme = {
         hover: {
             main: '#f4f4f5',
             light: '#f4f4f5',
-            dark: '#444'
+            dark: '#444',
         },
         info: {
-            main: '#C4C9CC'
+            main: '#C4C9CC',
         },
         error: {
             main: '#E53935',
@@ -53,6 +48,7 @@ const themeOptions: ITheme = {
     },
     typography: {
         fontFamily: [
+            'Roboto',
             '-apple-system',
             'BlinkMacSystemFont',
             '"Segoe UI"',
@@ -63,11 +59,10 @@ const themeOptions: ITheme = {
             '"Apple Color Emoji"',
             '"Segoe UI Emoji"',
             '"Segoe UI Symbol"',
-        ].join(',')
-    }
+        ].join(','),
+    },
 }
 
+const theme = createTheme(themeOptions)
 
-const theme = createTheme(themeOptions);
-
-export default theme;
+export default theme
