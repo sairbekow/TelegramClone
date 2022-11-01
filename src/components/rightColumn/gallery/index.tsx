@@ -16,6 +16,7 @@ interface UserFieldProps{
 const Main = styled(Box)`
     position: relative;
     min-height: 280px;
+    max-height: 400px;
     margin-bottom: 30px;
 `
 
@@ -55,7 +56,7 @@ const RightColumnGallery = ({images}: Props) => {
             }
         </Gallery>
         <UserInfo>
-            <UserField color="base.light">
+            <UserField size={24} weight={500} color="base.light">
                 Karen J.
             </UserField>
             <UserField color="primary.main" size={18} weight={400}>

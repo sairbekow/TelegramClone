@@ -52,7 +52,7 @@ const Detailed:FC<DetailedProps> = ({toggleDrawer}) => {
     return (
         <Main>
             <RightColumnHeader toggleDrawer={toggleDrawer}/>
-            <RightColumnGalerally images={[photo]}/>
+            <RightColumnGalerally images={[photo,photo,photo,photo]}/>
             <InfoList>
                 <RightColumnInfoItem Icon={ErrorOutlineIcon} field={"Bio"} value={"25 y.o traveler"}/>
                 <RightColumnInfoItem Icon={AlternateEmailIcon} field={"Username"} value={"@karen"}/>
