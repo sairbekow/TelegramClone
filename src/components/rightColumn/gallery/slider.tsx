@@ -4,7 +4,7 @@ import { styled } from "@mui/material/styles";
 import { Box } from '@mui/material';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import "./customDots.css"
+import "./custom_react_slick.css"
 // import { CustomDots } from './customDots';
 
 
@@ -26,6 +26,7 @@ const ImgBlock = styled(Box)`
   position: relative;
   width: 100%;
   height: 100%;
+  z-index: 1;
 
   & div{
     height: 100%;
