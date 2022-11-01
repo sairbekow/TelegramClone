@@ -3,6 +3,7 @@ import { Box } from '@mui/material'
 import LeftColumn from '@/components/leftColumn'
 import { styled } from '@mui/material/styles'
 import { Outlet } from 'react-router-dom'
+import ContactWrapper from '../contacts/contactWrapper'
 
 interface MainLayoutProps {}
 
@@ -19,7 +20,8 @@ const Main = styled(Box)`
 const MainLayout: FC<MainLayoutProps> = () => {
   return (
     <Main>
-      <LeftColumn />
+      {/* <LeftColumn /> */}
+      <ContactWrapper />
       <div style={{ width: '100%' }}>
         <Outlet />
       </div>

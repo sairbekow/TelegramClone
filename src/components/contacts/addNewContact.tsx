@@ -1,9 +1,13 @@
 import theme from '@/styles/theme'
 import { Button, DialogActions, TextField } from '@mui/material'
+import { FC, MouseEventHandler, ReactNode } from 'react'
 import { useState } from 'react'
 import styled from 'styled-components'
+import { setBoolState } from '../createModals/wrapper'
 
-type Props = {}
+interface Props {
+  setOpen: setBoolState
+}
 
 const Box = styled.div`
   width: 500px;
@@ -55,7 +59,7 @@ const AvatarText = styled.h2`
   font-size: 25px;
   text-transform: uppercase;
 `
-function AddNewContact({}: Props) {
+function AddNewContact({ setOpen }: Props) {
   const [name, setName] = useState('')
   const [surname, setSurname] = useState('')
   const [phoneNumber, setPhoneNumber] = useState('')
@@ -107,10 +111,11 @@ function AddNewContact({}: Props) {
             onChange={(e) => getSurname(e)}
           />
           <DialogActions>
-            <Button>Отмена</Button>
+            <Button onClick={() => setOpen(false)}>Отмена</Button>
             <Button
               autoFocus
               disabled={phoneNumber.length && name.length ? false : true}
+              onClick={() => setOpen(false)}
             >
               Готово
             </Button>
