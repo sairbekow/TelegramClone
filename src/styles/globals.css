@@ -26,3 +26,20 @@ input[type='number']:focus {
   appearance: none;
   -moz-appearance: textfield;
 }
+
+::-webkit-scrollbar {
+  width: 0.4em;
+}
+
+::-webkit-scrollbar-track {
+  background: none;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #c4c9cc;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(90, 90, 90, 0.3);
+}

@@ -6,7 +6,7 @@ import MainLayout from '@/components/MainLayout'
 import EmptyChatroom from '@/components/chatroom/empty'
 
 const AppRouter = () => {
-  const auth = true
+  const auth = false
   return (
     <Routes>
       {auth ? (
@@ -15,7 +15,7 @@ const AppRouter = () => {
           <Route path=":id" element={<Chatroom />} />
         </Route>
       ) : (
-        <Route path="/" element={<Auth />} />
+        <Route path="/auth" element={<Auth />} />
       )}
       <Route path="*" element={<NotFound />} />
     </Routes>

@@ -14,6 +14,8 @@ import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import BugReportOutlinedIcon from "@mui/icons-material/BugReportOutlined";
 import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
 import { StyledInputBase, Wrapper } from "./headerStyle";
+import { useAppDispatch } from "@/hooks/redux";
+import { changeSlide } from "@/redux/slices/sideBarRoute";
 
 // import { useDispatch } from "react-redux";
 // import { isContacts, noContacts } from "@/redux/slices/contacts";
@@ -48,6 +50,7 @@ const Header = () => {
         {
             icon: <SettingsOutlinedIcon sx={{ color: "#707579" }} />,
             title: "Settings",
+            path: "settings"
         },
         {
             icon: <ModeNightOutlinedIcon sx={{ color: "#707579" }} />,
@@ -67,16 +70,10 @@ const Header = () => {
         },
     ];
 
-    // const dispatch = useDispatch();
-
-    // function setContactMode(e) {
-    //     if (e.target.innerText.toLowerCase() === "contacts") {
-    //         console.log(e);
-    //         dispatch(isContacts());
-    //     } else dispatch(noContacts());
-    // }
-
-
+    const dispatch = useAppDispatch();
+    const onChangeLeftSlide = (path:string)=>{
+        dispatch(changeSlide(path))
+    }
     return (
         <Wrapper >
             <IconButton
@@ -112,9 +109,7 @@ const Header = () => {
                             justifyContent: "start",
                             gap: "10px",
                         }}
-                    // onClick={(e) => {
-                    //     setContactMode(e);
-                    // }}
+                        onClick={()=>onChangeLeftSlide(item.path || "root")}
                     >
                         {item.icon}
                         <span style={{ color: "black" }}>{item.title}</span>
