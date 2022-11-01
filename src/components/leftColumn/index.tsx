@@ -12,6 +12,7 @@ import { useTheme } from "@mui/material/styles";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
+import { CreateFolder } from "../Settings/components/CreateFolder/CreateFolder";
 
 interface TabPanelProps {
     children?: React.ReactNode;
@@ -152,7 +153,10 @@ const LeftColumn = () => {
                     transitionDuration: '500ms',
                 }}
             >
-                <Header />
+<CreateFolder/>
+
+
+                {/* <Header />
                 <Box sx={{ width: "100%" }}>
                     <Tabs
                         value={value}
@@ -266,7 +270,7 @@ const LeftColumn = () => {
                         }
                     </SwipeableViews>
                 </Box>
-                <CreatorButton />
+                <CreatorButton /> */}
             </LeftBlock>
             <Line ref={refRight} className="resizer resizer-r"></Line>
         </Wrapper>
