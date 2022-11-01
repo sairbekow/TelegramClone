@@ -1,24 +1,37 @@
 import { Box, Stack, Typography } from "@mui/material"
-import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
-import { ReactNode } from "react";
-
+import { ISettings } from "@/components/Settings/data";
+import styled from "styled-components";
+import theme from "@/styles/theme";
 interface IInfoBlock {
-  data: {
-    title: string,
-    icon: ReactNode
-  }
+  data: ISettings
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  align-items:center;
+  margin-top:10px;
+  cursor: pointer;
+  gap: 2rem;
+  padding: 10px 1rem; 
+  border-radius: 0.75rem;
+  &:hover{
+    background: #f4f4f5
+  }
+`
+
+const Paragraph = styled.p`
+  margin: 0px;
+  font-weight: 500;
+  color: ${theme.palette.base.dark}
+`
 
 export const SettingsItem = ({ data }: IInfoBlock) => {
   return (
-    <Stack
-      direction={"row"}
-      alignItems={"center"}
-      className={"hover:bg-gray-200 mt-[10px] cursor-pointer gap-[2rem] py-[10px] px-[1rem] rounded-[0.75rem]"}>
+    <Wrapper>
       {data.icon}
       <Box flexDirection={"column"}>
-        <Typography paragraph={true} color={"base.dark"} className={"m-0 text-[16px] font-semibold"}>{data.title}</Typography>
+        <Paragraph>{data.title}</Paragraph>
       </Box>
-    </Stack>
+    </Wrapper >
   )
 }

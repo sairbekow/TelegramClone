@@ -4,10 +4,12 @@ import {
 } from "@reduxjs/toolkit";
 
 import {contactsSlice} from "./slices/contacts";
+import sideBarRoute from "./slices/sideBarRoute";
 
 
 const rootReducer = combineReducers({
     contacts: contactsSlice.reducer,
+    sideBarRoute
 });
 
 export const makeStore = () => {

@@ -5,24 +5,28 @@ import { routePath } from '@/utils/routePath';
 import { FC } from 'react'
 import { Route, Routes } from 'react-router-dom'
 
+
 interface RouteObj {
-    path: string
-    component: FC
+  path: string
+  component: FC
 }
 
 const routes: RouteObj[] = [
-    {
-        path: routePath.CHATROOM,
-        component: Chatroom
-    },
-    {
-        path: routePath.NOT_FOUND,
-        component: NotFound
-    }
+  {
+    path: routePath.CHATROOM,
+    component: Chatroom
+  },
+  {
+    path: routePath.NOT_FOUND,
+    component: NotFound
+  }
 ]
 
+
+
+
 const AppRouter = () => {
-    const auth = true;
+  const auth = true;
   return (
     <Routes>
         {

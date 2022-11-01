@@ -4,6 +4,7 @@ import ChatroomBody from "@/components/chatroom/chatroomBody";
 import ChatroomBackground from "@/components/chatroom/chatroomBackground";
 
 const Chatroom = () => {
+
     return (
         <Box height={'100vh'}
             marginLeft={'auto'}

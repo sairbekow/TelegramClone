@@ -3,6 +3,8 @@ import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 import { InfoBlock } from "./components/InfoBlock";
 import React, { FC } from "react";
+import styled from "styled-components";
+import theme from "@/styles/theme";
 
 
 const userInfor = [
@@ -18,31 +20,63 @@ const userInfor = [
   }
 ];
 
-export const UserData :FC = () => {
+const Wrapper = styled.div`
+  background: ${theme.palette.base.light};
+  margin-top: 56px;
+`
+const UserDataWrapper = styled.div`
+  width: 100%;
+  position:absolute;
+  bottom: 0px;
+  padding: 12px 24px;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);
+`
+const UserName = styled.p`
+  margin: 0px;
+  color: #FFF;
+  font-weight: 500;
+  font-size: 1.25rem;
+`
+const UserSeen = styled.p`
+  margin: 0px;
+  font-size: .825rem;
+  opacity: .5;
+  color: #FFF;
+`
+
+const UserAvatar = styled.img`
+  width: 100%;
+  object-fit: cover;
+`
+
+const WrapperContact = styled.div`
+  padding: 10px 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: start;
+`
+
+export const UserData: FC = () => {
   return (
-    <Box className={"bg-white"}>
+    <Wrapper className={"bg-white mt-[56px]"}>
       <Stack direction="column" position={"relative"}>
-        <img
-          className={"w-[100%] object-cover"}
+        <UserAvatar
           src={"https://avatanplus.com/files/photos/original/590ec8ec7139115be1c0dbb0.jpg"}
           alt={"img"}
         />
-        <Box className={"w-[100%] absolute bottom-0 py-[12px] px-[24px] bg-bgLinearGrad"}
-          sx={{
-            background: "linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 100%);"
-          }}
-        >
-          <Typography paragraph={true} color={"base.light"} className={"m-0 font-medium text-[1.25rem]"}>Джай Джай Джай</Typography>
-          <Typography paragraph={true} color={"base.light"} className={"m-0 text-[.825rem] opacity-50"}>last seen 7 minutes ago</Typography>
-        </Box>
+        <UserDataWrapper>
+          <UserName>Джай Джай Джай</UserName>
+          <UserSeen>last seen 7 minutes ago</UserSeen>
+        </UserDataWrapper>
       </Stack>
-      <Box className="py-[10px] px-[5px] flex flex-col gap-[10px]">
+      <WrapperContact>
         {
           userInfor.map((elem, index) => (
             <InfoBlock data={elem} key={index} />
           ))
         }
-      </Box>
-    </Box>
+      </WrapperContact>
+    </Wrapper>
   );
 };
