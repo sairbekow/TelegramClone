@@ -3,7 +3,6 @@ import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import { ReactNode, useState } from "react";
 import useClipboard from "react-use-clipboard";
 import styled from "styled-components";
-import theme from "@/styles/theme";
 
 interface IInfoBlock {
   data: {
@@ -27,7 +26,7 @@ const Title = styled.p`
   margin: 0px;
   font-size: 16px;
   font-weight: 600;
-  color: ${theme.palette.base.dark};
+  color: ${props => props.theme.palette.base.dark};
   line-height: 1.25rem;
 `
 const Description = styled.p`
