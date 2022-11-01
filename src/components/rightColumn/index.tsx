@@ -1,6 +1,7 @@
 import {FC, MouseEventHandler} from "react";
 import Drawer from '@mui/material/Drawer'
 import Detailed from "@/components/rightColumn/detailed";
+import { ModalWrapper } from "../createModals/wrapper";
 
 interface RightColumnProps {
     isOpen: boolean
@@ -22,7 +23,6 @@ const RightColumn: FC<RightColumnProps> = ({isOpen, toggleDrawer}) => {
                     <Detailed toggleDrawer={toggleDrawer}/>
                 }
             </Drawer>
-
         </div>
     )
 }
