@@ -7,16 +7,22 @@ import theme from '@/styles/theme'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import AddNewContact from './addNewContact'
 import { ModalWrapper } from '../createModals/wrapper'
+import Header from '../leftRootBlock/header'
 
 type Props = {}
+const MainBox = styled.div`
+  position: relative;
+`
 
 const ContactBox = styled.div`
-  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
   padding: 5px 10px;
 `
 const AddUser = styled.div`
   position: absolute;
-  top: 500px;
+  bottom: 20px;
   right: 50px;
   border-radius: 50%;
   display: flex;
@@ -35,8 +41,9 @@ function ContactWrapper({}: Props) {
     setIsOpenModal(true)
   }
   return (
-    <>
+    <MainBox>
       <ContactBox>
+        <Header />
         <Contact />
         <Contact />
         <Contact />
@@ -63,7 +70,7 @@ function ContactWrapper({}: Props) {
       <ModalWrapper open={isOpenModal} setOpen={setIsOpenModal}>
         <AddNewContact setOpen={setIsOpenModal} />
       </ModalWrapper>
-    </>
+    </MainBox>
   )
 }
 
