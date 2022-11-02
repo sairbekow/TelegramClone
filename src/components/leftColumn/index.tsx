@@ -1,6 +1,6 @@
 import { useAppSelector } from "@/hooks/redux";
 import { Box, Slide } from "@mui/material";
-import React, { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import styled from "styled-components"
 
 const Wrapper = styled.div`
@@ -17,7 +17,6 @@ const Line = styled.div`
 	height: 100%;
 	background: #c4c9cc;
 `
-
 
 const WrapperSlide = styled(Box)`
   width: inherit;

@@ -12,7 +12,7 @@ export enum SidebarRoute {
   GeneralSettings = "generalSetting",
   Notifications = "notification",
   EditProfile = "editprofile",
-  CreateFolder = "createFolder",
+  CreateFolder = "createFolder"
 }
 
 export interface ISideBarRoute {
