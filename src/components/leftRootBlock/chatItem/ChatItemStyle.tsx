@@ -1,4 +1,3 @@
-import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 export const Avatar = styled.div`
@@ -46,4 +45,31 @@ export const IconInformation = styled.div`
     font-size: 0.875rem;
     line-height: 1;
     gap: 20px;
+`
+export const TextName = styled.h2`
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+`
+export const DataSpan = styled.span`
+    margin-left: 4px;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 500;
+`
+export const NotifSpan = styled.span`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    text-align: right;
+    color: white;
+    background: rgb(34 197 94);
+    border-radius: 50%;
+    min-width: 20px;
+    min-height: 20px;   
 `

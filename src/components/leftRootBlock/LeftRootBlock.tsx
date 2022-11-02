@@ -1,6 +1,6 @@
-import Header from "@/components/leftRootBlock/header";
+import Header from "@/components/leftRootBlock/headerItem/header";
 import CreatorButton from "@/components/creatorButton";
-import ChatItem from "@/components/chatItem/ChatItem";
+import ChatItem from "@/components/leftRootBlock/chatItem/ChatItem";
 import { Box } from "@mui/material";
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components"
