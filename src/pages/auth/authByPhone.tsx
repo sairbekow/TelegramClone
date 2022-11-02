@@ -120,7 +120,11 @@ function AuthByPhone() {
           value={phone}
         />
       </MyBox>
-      {phone.length >= 10 && <NextButton>Продолжить</NextButton>}
+      {phone.length >= 10 && 
+        <NextButton 
+            onClick={() => signIn({phoneNumber: phone, phoneCode: phone})}>
+                Продолжить
+            </NextButton>}
     </MyBox>
   )
 }

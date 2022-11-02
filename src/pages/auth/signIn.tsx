@@ -23,7 +23,7 @@ const signIn = async ({phoneNumber, phoneCode}: paramsSign) => {
   });
   await client.start({
     phoneNumber: async () => {
-      const number = await String(phoneNumber);
+      const number = String(phoneNumber);
       return number
     },
     // password: async () => {
@@ -31,14 +31,14 @@ const signIn = async ({phoneNumber, phoneCode}: paramsSign) => {
     //   return String(password)
     // },
     phoneCode: async () => {
-      const code = await String(phoneCode);
+      const code = String(phoneCode);
       return String(code)
     },
     onError: (err) => console.log(err),
   });
   console.log("You should now be connected.");
   console.log(client.session.save()); // Save this string to avoid logging in again
-  await client.sendMessage("me", { message: "Hello!" });
+  // await client.sendMessage("me", { message: "Hello!" });
 };
 
 
