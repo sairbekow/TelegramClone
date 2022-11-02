@@ -5,7 +5,6 @@ import { GeneralSettings } from '@/components/Settings/content/GeneralSettings'
 import { FC } from 'react'
 import { Notifications } from '../components/Settings/content/Notifications/index'
 import { CreateFolder } from '../components/Settings/content/CreateFolder/index'
-import Contacts from '@/components/contacts'
 import ContactWrapper from '@/components/contacts/contactWrapper'
 
 export enum SidebarRoute {

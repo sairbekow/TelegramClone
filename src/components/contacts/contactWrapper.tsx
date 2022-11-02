@@ -7,7 +7,7 @@ import theme from '@/styles/theme'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
 import AddNewContact from './addNewContact'
 import { ModalWrapper } from '../createModals/wrapper'
-import Header from '../leftRootBlock/header'
+import Header from '../leftRootBlock/headerItem/header'
 
 type Props = {}
 const MainBox = styled.div`

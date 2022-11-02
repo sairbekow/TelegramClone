@@ -24,3 +24,15 @@ export const StyledInputBase = styled(InputBase)(() => ({
         padding: "0px",
     },
 }));
+
+export const Form = styled.form`
+    padding: 7px 15px 7px 10px;
+    gap: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-radius: 1.375rem;
+    width: 100%;
+    background-color:#f4f4f5;
+    border: 2px solid #f4f4f5;
+` 

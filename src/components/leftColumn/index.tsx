@@ -1,6 +1,6 @@
 import { useAppSelector } from '@/hooks/redux'
 import { Box, Slide } from '@mui/material'
-import React, { useState, useEffect, useRef } from 'react'
+import { useEffect, useRef } from 'react'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`

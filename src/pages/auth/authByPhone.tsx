@@ -67,12 +67,24 @@ const countries: readonly CountryType[] = [
   { code: 'UZ', label: 'Узбекистан', phone: '+998' },
 ]
 
-function AuthByPhone() {
-  const [phone, setPhone] = useState('')
+interface IPhoneObj {
+  code: string
+  number: string
+}
 
-  const handleChange = (option) => {
-    setPhone(option.phone)
+function AuthByPhone() {
+  const [phone, setPhone] = useState<IPhoneObj>({ code: '', number: '' })
+
+  const getPhoneCode = (option: CountryType) => {
+    setPhone({ ...phone, code: option.phone })
   }
+
+  const getPhoneNumber = (e) => {
+    const phoneNum = e.target.value.replace(phone.code, '')
+    setPhone({ ...phone, number: phoneNum })
+  }
+
+  console.log(phone)
 
   return (
     <MyBox>
@@ -92,7 +104,7 @@ function AuthByPhone() {
           options={countries}
           autoHighlight
           renderOption={(props, option) => (
-            <div onClick={() => handleChange(option)}>
+            <div onClick={() => getPhoneCode(option)}>
               <CountryList {...props}>
                 <img
                   loading="lazy"
@@ -115,8 +127,8 @@ function AuthByPhone() {
           variant="outlined"
           type="text"
           sx={{ width: 300 }}
-          onChange={(e) => setPhone(e.target.value)}
-          value={phone}
+          onChange={(e) => getPhoneNumber(e)}
+          value={[phone.code, phone.number].join('')}
         />
       </MyBox>
       {phone.length >= 10 && <NextButton>Продолжить</NextButton>}
