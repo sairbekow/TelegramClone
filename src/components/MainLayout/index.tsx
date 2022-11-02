@@ -1,22 +1,19 @@
-import { FC, ReactElement } from 'react'
-import { Box } from '@mui/material'
+import { FC } from 'react'
 import LeftColumn from '@/components/leftColumn'
-import { styled } from '@mui/material/styles'
 import { Outlet } from 'react-router-dom'
-
-interface MainLayoutProps {}
+import { Box } from '@mui/material'
+import styled from 'styled-components'
 
 const Main = styled(Box)`
   position: relative;
   width: 100vw;
   height: 100vh;
   display: flex;
-  overflow: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 `
 
-const MainLayout: FC<MainLayoutProps> = () => {
+const MainLayout: FC = () => {
   return (
     <Main>
       <LeftColumn />
