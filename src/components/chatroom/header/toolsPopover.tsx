@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { Button, Popover } from '@mui/material'
+import { Button, Popover, Typography } from '@mui/material'
 import NotificationsOffOutlinedIcon from '@mui/icons-material/NotificationsOffOutlined'
 import theme from '@/styles/theme'
 import DeleteOutlineOutlinedIcon from '@mui/icons-material/DeleteOutlineOutlined'
@@ -10,9 +10,30 @@ const PopoverElement = styled(Popover)`
     min-width: 13.5rem;
 `
 
+const ListButtons = styled('div')`
+    display: flex;
+    flex-direction: column;
+`
+
 const OptionButton = styled(Button)`
-  padding: 12px 14px;
-  justify-content: flex-start;
+    padding: 12px 14px;
+    justify-content: flex-start;
+    width: 100%;
+    text-transform: unset;
+
+    & svg {
+        margin-right: 25px;
+    }
+
+    & span {
+        font-size: 16px;
+        font-weight: 400;
+    }
+`
+
+
+const Text = styled(Typography)<{ color: string }>`
+    color: ${(props) => props.color};
 `
 
 interface ToolsPopoverProps {
@@ -40,16 +61,20 @@ const ToolsPopover: FC<ToolsPopoverProps> = ({
                     horizontal: 'right',
                 }}
             >
-                <OptionButton>
-                    <NotificationsOffOutlinedIcon
-                        color={'icons'}
-                        sx={{ marginRight: 4 }}
-                    />
-                    <span style={{ color: theme.palette.icons.light }}>
-                        Mute
-                    </span>
-                </OptionButton>
-
+                <ListButtons>
+                    <OptionButton>
+                        <NotificationsOffOutlinedIcon color={'icons'} />
+                        <Text color={{ color: theme.palette.icons.light }}>
+                            Mute
+                        </Text>
+                    </OptionButton>
+                    <OptionButton>
+                        <DeleteOutlineOutlinedIcon color={'error'} />
+                        <Text color={{ color: theme.palette.error.main }}>
+                            Delete and Exit
+                        </Text>
+                    </OptionButton>
+                </ListButtons>
             </PopoverElement>
         </div>
     )

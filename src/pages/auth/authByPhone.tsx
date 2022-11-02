@@ -1,7 +1,8 @@
 import theme from "@/styles/theme";
-import { Autocomplete, TextField } from "@mui/material";
+import { Autocomplete, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import styled from "styled-components";
+import signIn from "./signIn";
 
 interface CountryType {
     code: string;
@@ -10,7 +11,7 @@ interface CountryType {
     suggested?: boolean;
 }
 
-const Box = styled.div`
+const MyBox = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,12 +24,12 @@ const Title = styled.h1`
     text-align: center;
 `;
 
-const CountryBox = styled.div`
-    & > img: {
-        margin-right: number;
-        flex-shrink: number;
-    }
-`;
+// const CountryBox = styled.div`
+//     & > img {
+//         margin-right: number;
+//         flex-shrink: number;
+//     }
+// `;
 
 const P = styled.p`
     padding-top: 1.5rem /* 24px */;
@@ -50,17 +51,17 @@ function AuthByPhone() {
         setPhone(params);
         console.log("set", params.inputProps.value);
     };
-    console.log("phone", phone);
+    // console.log("phone", phone);
 
     return (
-        <Box>
+        <MyBox>
             <img
                 src="https://web.telegram.org/z/telegram-logo.1b2bb5b107f046ea9325.svg"
                 alt="Telegram"
                 className="mb-10 w-52"
             />
 
-            <Box>
+            <MyBox>
                 <Title>Telegram 2.0</Title>
                 <P>Проверьте код страны и введите свой номер телефона.</P>
 
@@ -73,7 +74,7 @@ function AuthByPhone() {
                     // getOptionLabel={(option) => setPhone(option.phone)}
                     onClick={(e) => console.log(e)}
                     renderOption={(props, option) => (
-                        <CountryBox {...props}>
+                        <div {...props}>
                             <img
                                 loading="lazy"
                                 width="20"
@@ -82,7 +83,7 @@ function AuthByPhone() {
                                 alt={option.label}
                             />
                             {option.label}+{option.phone}
-                        </CountryBox>
+                        </div>
                     )}
                     renderInput={(params) => (
                         <TextField
@@ -108,9 +109,12 @@ function AuthByPhone() {
                     defaultValue="996"
                     inputProps={{ inputMode: "numeric", pattern: "[0-9]*" }}
                 />
-                {console.log(phone)}
-            </Box>
-        </Box>
+                {/* {console.log(phone)} */}
+                <Button onClick={() => signIn({phoneNumber: phone, phoneCode: phone})}>
+                    Sign in
+                </Button>
+            </MyBox>
+        </MyBox>
     );
 }
 

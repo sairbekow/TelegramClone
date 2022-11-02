@@ -1,8 +1,8 @@
-import styled from "@emotion/styled";
-import theme from "@/styles/theme";
+import styled from 'styled-components'
 import AuthByQR from "./authByQR";
 import AuthByPhone from "./authByPhone";
 import { useState } from "react";
+// import input from "input"
 
 const MyButton = styled.button`
     border: none;
@@ -10,7 +10,7 @@ const MyButton = styled.button`
     padding: 17px;
     text-transform: uppercase;
     width: 330px;
-    color: ${theme.palette.primary.light};
+    color: ${(props) => props.theme.palette.primary.light};
     background-color: transparent;
     cursor: pointer;
     margin-top: 16px;
@@ -32,6 +32,12 @@ const Main = styled.div`
 
 function Auth() {
     const [isLogInByPhone, setIsLogInByPhone] = useState(false);
+    // const testInput = async () =>  {
+    //     return await input.text("Please enter your number: ")
+    // }
+
+    // console.log(testInput);
+    
     return (
         <Main>
             {isLogInByPhone ? <AuthByPhone /> : <AuthByQR />}
@@ -45,6 +51,7 @@ function Auth() {
                     <p>Вход по номеру телефона</p>
                 )}
             </MyButton>
+
         </Main>
     );
 }

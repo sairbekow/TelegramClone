@@ -9,20 +9,26 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@esbuild-plugins/node-globals-polyfill": "^0.1.1",
+    "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.11",
     "@mui/styled-engine": "^5.10.8",
+    "@mui/styled-engine-sc": "^5.10.6",
     "@reduxjs/toolkit": "^1.8.6",
     "@types/react-router-dom": "^5.3.3",
     "@types/react-slick": "^0.23.10",
+    "@types/react-swipeable-views": "^0.13.1",
+    "input": "^1.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.4",
     "react-router-dom": "^6.4.2",
     "react-slick": "^0.29.0",
+    "react-swipeable-views": "^0.14.0",
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.3.6",
-    "telegram": "^2.13.6"
+    "telegram": "^2.13.5"
   },
   "devDependencies": {
     "@types/node": "^18.11.7",
