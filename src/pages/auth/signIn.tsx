@@ -43,3 +43,9 @@ const signIn = async ({phoneNumber, phoneCode}: paramsSign) => {
 
 
 export default signIn
+
+
+// [2022-11-02T18:40:05.372] [INFO] - [Running gramJS version 2.13.4]
+// Logger.js:120 [2022-11-02T18:40:05.380] [INFO] - [Connecting to vesta.web.telegram.org:80/TCPObfuscated using PromisedWebSocket]
+// Logger.js:120 [2022-11-02T18:40:07.897] [INFO] - [Connection to vesta.web.telegram.org:80/TCPObfuscated complete!]
+// Logger.js:120 [2022-11-02T18:40:07.897] [INFO] - [Using LAYER 146 for initial connect]
