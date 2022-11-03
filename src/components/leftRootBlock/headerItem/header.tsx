@@ -3,15 +3,18 @@ import SearchIcon from '@mui/icons-material/Search'
 import MenuIcon from '@mui/icons-material/Menu'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import { Button, Popover } from '@mui/material'
-import { useState, MouseEvent } from 'react'
+import { useState, MouseEvent, useEffect } from 'react'
 import { DataSetting } from './data'
 import { Form, StyledInputBase, Wrapper } from './headerStyle'
 import { useAppDispatch } from '@/hooks/redux'
-import { changeSlide } from '@/redux/slices/sideBarRoute'
+import { changeSlide, prevSlide } from '@/redux/slices/sideBarRoute'
+import { useSelector } from 'react-redux'
+import { store } from '@/redux/store'
+import path from 'path'
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = useState<HTMLButtonElement | null>(null)
-  const [pathName, setPathName] = useState<string>('')
+  const [isContacts, setIsContacts] = useState<boolean>(false)
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
@@ -25,26 +28,34 @@ const Header = () => {
   const id = open ? 'simple-popover' : undefined
 
   const dispatch = useAppDispatch()
+  const pathName = useSelector((store) => store.sideBarRoute)
+
   const onChangeLeftSlide = (path: string) => {
     dispatch(changeSlide(path))
-    setPathName(path)
   }
-  console.log(pathName)
+
+  const changePrevSlide = () => {
+    dispatch(prevSlide())
+  }
+
+  useEffect(() => {
+    if (pathName[pathName.length - 1].path === 'contacts') setIsContacts(true)
+  }, [pathName])
 
   return (
     <Wrapper>
-      {pathName === 'contacts' ? (
+      {isContacts ? (
         <IconButton
           aria-label="delete"
           aria-describedby={id}
-          onClick={handleClick}
           sx={{
             width: '40px',
             height: '40px',
             borderRadius: '50%',
           }}
+          onClick={changePrevSlide}
         >
-          <MenuIcon />
+          <ArrowBackIcon />
         </IconButton>
       ) : (
         <IconButton
@@ -57,7 +68,7 @@ const Header = () => {
             borderRadius: '50%',
           }}
         >
-          <ArrowBackIcon />
+          <MenuIcon />
         </IconButton>
       )}
 
@@ -81,7 +92,7 @@ const Header = () => {
               justifyContent: 'start',
               gap: '10px',
             }}
-            onClick={() => onChangeLeftSlide(item.path || 'root')}
+            onClick={() => onChangeLeftSlide(item.path)}
           >
             {item.icon}
             <span style={{ color: 'black' }}>{item.title}</span>

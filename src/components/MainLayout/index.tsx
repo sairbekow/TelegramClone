@@ -6,7 +6,7 @@ import styled from 'styled-components'
 
 const Main = styled(Box)`
   position: relative;
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
   display: flex;
   -webkit-font-smoothing: antialiased;

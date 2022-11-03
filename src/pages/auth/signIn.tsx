@@ -19,7 +19,6 @@ const signIn = async ({phoneNumber, phoneCode}: paramsSign) => {
 
   // console.log(Buffer);
   
-
   const result = await client.invoke(
     new Api.auth.SendCode({
       phoneNumber: phoneNumber && phoneCode ? phoneCode + phoneNumber : "",

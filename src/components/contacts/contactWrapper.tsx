@@ -22,8 +22,8 @@ const ContactBox = styled.div`
 `
 const AddUser = styled.div`
   position: absolute;
-  bottom: 20px;
-  right: 50px;
+  bottom: 90px;
+  right: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -42,8 +42,8 @@ function ContactWrapper({}: Props) {
   }
   return (
     <MainBox>
+      <Header />
       <ContactBox>
-        <Header />
         <Contact />
         <Contact />
         <Contact />

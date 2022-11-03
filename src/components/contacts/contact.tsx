@@ -1,4 +1,3 @@
-import React from 'react'
 import styled from 'styled-components'
 import theme from '@/styles/theme'
 
@@ -15,7 +14,10 @@ const ContactWrapper = styled.div`
   font-family: ${theme.typography.fontFamily};
 
   &:hover {
-    background-color: #c4c9cc;
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+;
   }
 `
 

@@ -3,12 +3,18 @@ import { Autocomplete, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import styled from "styled-components";
 import signIn from "./signIn";
+import VerifyByCode from './verifyByCode'
 
 interface CountryType {
   code: string
   label: string
   phone: string
   suggested?: boolean
+}
+
+export interface IPhoneObj {
+  code: string
+  number: string
 }
 
 const MyBox = styled.div`
@@ -68,13 +74,9 @@ const countries: readonly CountryType[] = [
   { code: 'UZ', label: 'Узбекистан', phone: '+998' },
 ]
 
-interface IPhoneObj {
-  code: string
-  number: string
-}
-
 function AuthByPhone() {
   const [phone, setPhone] = useState<IPhoneObj>({ code: '', number: '' })
+  const [isOpenVerifyWindow, setIsOpenVerifyWindow] = useState<boolean>(false)
 
   const getPhoneCode = (option: CountryType) => {
     setPhone({ ...phone, code: option.phone })
@@ -83,6 +85,9 @@ function AuthByPhone() {
   const getPhoneNumber = (e) => {
     const phoneNum = e.target.value.replace(phone.code, '')
     setPhone({ ...phone, number: phoneNum })
+  }
+  const openVerifyWindow = () => {
+    setIsOpenVerifyWindow(true)
   }
 
   console.log(phone)
@@ -132,11 +137,16 @@ function AuthByPhone() {
           value={[phone.code, phone.number].join('')}
         />
       </MyBox>
-      {phone.number.length >= 9 && 
-        <NextButton 
-            onClick={() => signIn({phoneNumber: phone.number, phoneCode: phone.code})}>
-                Продолжить
-            </NextButton>}
+      {phone.number.length >= 9 && (
+        <NextButton onClick={() => {
+          signIn({phoneNumber: phone.number, phoneCode: phone.code})
+          openVerifyWindow()
+        }}>Продолжить</NextButton>
+      )}
+
+      {isOpenVerifyWindow && (
+        <VerifyByCode phone={phone} setState={setIsOpenVerifyWindow} />
+      )}
     </MyBox>
   )
 }
