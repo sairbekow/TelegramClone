@@ -4,6 +4,8 @@ import { useState } from "react";
 import styled from "styled-components";
 import { sendVerifyCode } from "@/gramjs/auth";
 import VerifyByCode from './verifyByCode'
+import { useAppDispatch } from "@/hooks/redux";
+import { changeAuthGramState, GramAuthState } from "@/redux/slices/gramAuth";
 
 interface CountryType {
   code: string
@@ -90,6 +92,18 @@ function AuthByPhone() {
     setIsOpenVerifyWindow(true)
   }
 
+  const sendCode = async () => {
+    const result = await sendVerifyCode({phoneNumber: phone.number, phoneCode: phone.code})
+    if(result) {
+      const newState: GramAuthState = {
+        state: "",
+        gramResult: result
+      }
+      useAppDispatch()(changeAuthGramState(newState))
+      openVerifyWindow()
+    }
+  }
+
   console.log(phone)
 
   return (
@@ -138,13 +152,10 @@ function AuthByPhone() {
         />
       </MyBox>
       {phone.number.length >= 9 && (
-        <NextButton onClick={() => {
-          sendVerifyCode({phoneNumber: phone.number, phoneCode: phone.code})
-          openVerifyWindow()
-        }}>Продолжить</NextButton>
+        <NextButton onClick={sendCode}>Продолжить</NextButton>
       )}
 
-      {isOpenVerifyWindow && (
+      {Boolean(1) && (
         <VerifyByCode phone={phone} setState={setIsOpenVerifyWindow} />
       )}
     </MyBox>
