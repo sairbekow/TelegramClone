@@ -1,9 +1,11 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import sideBarRoute from './slices/sideBarRoute'
+import gramAuthState from "./slices/gramAuth"
 
 const rootReducer = combineReducers({
   sideBarRoute,
+  gramAuthState,
 })
 
 export const makeStore = () => {

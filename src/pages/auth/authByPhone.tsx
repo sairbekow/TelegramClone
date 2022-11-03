@@ -2,7 +2,7 @@ import theme from "@/styles/theme";
 import { Autocomplete, Button, TextField } from "@mui/material";
 import { useState } from "react";
 import styled from "styled-components";
-import signIn from "./signIn";
+import { sendVerifyCode } from "@/gramjs/auth";
 import VerifyByCode from './verifyByCode'
 
 interface CountryType {
@@ -139,7 +139,7 @@ function AuthByPhone() {
       </MyBox>
       {phone.number.length >= 9 && (
         <NextButton onClick={() => {
-          signIn({phoneNumber: phone.number, phoneCode: phone.code})
+          sendVerifyCode({phoneNumber: phone.number, phoneCode: phone.code})
           openVerifyWindow()
         }}>Продолжить</NextButton>
       )}
