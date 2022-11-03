@@ -6,7 +6,7 @@ import MainLayout from '@/components/MainLayout'
 import EmptyChatroom from '@/components/chatroom/empty'
 
 const AppRouter = () => {
-  const auth = true
+  const auth = false
   return (
     <Routes>
       {auth ? (
