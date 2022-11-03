@@ -132,9 +132,9 @@ function AuthByPhone() {
           value={[phone.code, phone.number].join('')}
         />
       </MyBox>
-      {phone.length >= 10 && 
+      {phone.number.length >= 9 && 
         <NextButton 
-            onClick={() => signIn({phoneNumber: phone, phoneCode: phone})}>
+            onClick={() => signIn({phoneNumber: phone.number, phoneCode: phone.code})}>
                 Продолжить
             </NextButton>}
     </MyBox>
