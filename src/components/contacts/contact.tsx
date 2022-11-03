@@ -1,29 +1,52 @@
-import React from "react";
+import styled from 'styled-components'
+import theme from '@/styles/theme'
 
-type Props = {};
+type Props = {}
 
+const ContactWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 10px;
+  font-family: ${theme.typography.fontFamily};
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.08);
+}
+
+;
+  }
+`
+
+const ContactImage = styled.img`
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+`
+
+const UserName = styled.p`
+  font-weight: 500;
+`
+
+const UserStatus = styled.p`
+  font-weight: 400;
+  color: ${theme.palette.icons.main};
+`
 export default function Contact({}: Props) {
-    return (
-        <div
-            className="flex items-center gap-2 p-3 w-full cursor-pointer hover:rounded-lg"
-            sx={{
-                backgroundColor: "#c4c9cc",
-                "&:hover": {
-                    background: "red",
-                },
-            }}
-        >
-            <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwr_zZjgvmu4BccwDNIHic8K5dyehw7cSYA&usqp=CAU"
-                alt=""
-                className="w-14 h-14 object-cover rounded-full"
-            />
-            <div className="">
-                <p className="font-medium text-base truncate w-full ">
-                    Арген Саирбеков
-                </p>
-                <p className="text-sm">онлайн</p>
-            </div>
-        </div>
-    );
+  return (
+    <ContactWrapper>
+      <ContactImage
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBwr_zZjgvmu4BccwDNIHic8K5dyehw7cSYA&usqp=CAU"
+        alt=""
+      />
+      <div>
+        <UserName>Арген Саирбеков</UserName>
+        <UserStatus>онлайн</UserStatus>
+      </div>
+    </ContactWrapper>
+  )
 }
